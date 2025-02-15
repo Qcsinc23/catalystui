@@ -1,0 +1,150 @@
+/* QCS Management System - Card Components */
+
+@layer components {
+  /* Base Card */
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden;
+  }
+
+  /* Card Sections */
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+  }
+
+  .card-body {
+    @apply p-6;
+  }
+
+  .card-footer {
+    @apply px-6 py-4 border-t border-gray-200;
+  }
+
+  /* Card Variants */
+  .card-hover {
+    @apply transition-shadow duration-200 hover:shadow-md;
+  }
+
+  .card-interactive {
+    @apply cursor-pointer transition-all duration-200 
+    hover:shadow-md hover:border-primary-300;
+  }
+
+  .card-bordered {
+    @apply border-2;
+  }
+
+  /* Card Sizes */
+  .card-sm {
+    @apply rounded;
+  }
+
+  .card-sm .card-header {
+    @apply px-4 py-3;
+  }
+
+  .card-sm .card-body {
+    @apply p-4;
+  }
+
+  .card-sm .card-footer {
+    @apply px-4 py-3;
+  }
+
+  .card-lg {
+    @apply rounded-xl;
+  }
+
+  .card-lg .card-header {
+    @apply px-8 py-6;
+  }
+
+  .card-lg .card-body {
+    @apply p-8;
+  }
+
+  .card-lg .card-footer {
+    @apply px-8 py-6;
+  }
+
+  /* Card Grid */
+  .card-grid {
+    @apply grid gap-6;
+  }
+
+  .card-grid-cols-2 {
+    @apply grid-cols-1 md:grid-cols-2;
+  }
+
+  .card-grid-cols-3 {
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .card-grid-cols-4 {
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  }
+
+  /* Card Content */
+  .card-title {
+    @apply text-xl font-semibold text-gray-900;
+  }
+
+  .card-subtitle {
+    @apply text-sm text-gray-500 mt-1;
+  }
+
+  /* Card Media */
+  .card-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  .card-image-sm {
+    @apply h-32;
+  }
+
+  .card-image-lg {
+    @apply h-64;
+  }
+
+  /* Card Actions */
+  .card-actions {
+    @apply flex items-center justify-end space-x-2;
+  }
+
+  /* Card States */
+  .card-selected {
+    @apply ring-2 ring-primary-500;
+  }
+
+  .card-disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  @layer components {
+    .card {
+      @apply bg-gray-800 border-gray-700;
+    }
+
+    .card-header {
+      @apply border-gray-700;
+    }
+
+    .card-footer {
+      @apply border-gray-700;
+    }
+
+    .card-title {
+      @apply text-gray-100;
+    }
+
+    .card-subtitle {
+      @apply text-gray-400;
+    }
+
+    .card-interactive {
+      @apply hover:border-primary-600;
+    }
+  }
+}

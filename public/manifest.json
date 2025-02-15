@@ -1,0 +1,40 @@
+{
+  "name": "QCS Management System",
+  "short_name": "QCS",
+  "description": "Event and Inventory Management Solution",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "48x48 72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your dashboard",
+      "url": "/dashboard"
+    },
+    {
+      "name": "Create Event",
+      "short_name": "New Event",
+      "description": "Create a new event",
+      "url": "/events/new"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "features": [
+    "Event Management",
+    "Inventory Tracking",
+    "Analytics & Reports",
+    "User Authentication",
+    "Responsive Design"
+  ]
+}

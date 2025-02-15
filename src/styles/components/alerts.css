@@ -1,0 +1,127 @@
+/* QCS Management System - Alert Components */
+
+@layer components {
+  /* Base Alert */
+  .alert {
+    @apply relative p-4 rounded-md border mb-4;
+  }
+
+  /* Alert Variants */
+  .alert-info {
+    @apply bg-blue-50 border-blue-200 text-blue-800;
+  }
+
+  .alert-success {
+    @apply bg-green-50 border-green-200 text-green-800;
+  }
+
+  .alert-warning {
+    @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+  }
+
+  .alert-error {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  /* Alert with Icon */
+  .alert-with-icon {
+    @apply pl-12;
+  }
+
+  .alert-icon {
+    @apply absolute left-4 top-4 w-5 h-5;
+  }
+
+  /* Alert Title */
+  .alert-title {
+    @apply font-medium mb-1;
+  }
+
+  /* Alert Content */
+  .alert-content {
+    @apply text-sm;
+  }
+
+  /* Dismissible Alert */
+  .alert-dismissible {
+    @apply pr-12;
+  }
+
+  .alert-close {
+    @apply absolute right-4 top-4 text-current opacity-50 
+    hover:opacity-75 focus:opacity-100 transition-opacity
+    focus:outline-none focus:ring-2 focus:ring-current;
+  }
+
+  /* Alert Actions */
+  .alert-actions {
+    @apply mt-3 flex items-center space-x-2;
+  }
+
+  /* Alert Animations */
+  .alert-enter {
+    @apply opacity-0 transform -translate-y-2;
+  }
+
+  .alert-enter-active {
+    @apply opacity-100 transform translate-y-0 transition-all duration-300;
+  }
+
+  .alert-exit {
+    @apply opacity-100 transform translate-y-0;
+  }
+
+  .alert-exit-active {
+    @apply opacity-0 transform -translate-y-2 transition-all duration-200;
+  }
+
+  /* Alert Sizes */
+  .alert-sm {
+    @apply p-3 text-sm;
+  }
+
+  .alert-sm .alert-icon {
+    @apply w-4 h-4 top-3 left-3;
+  }
+
+  .alert-sm.alert-with-icon {
+    @apply pl-10;
+  }
+
+  .alert-lg {
+    @apply p-5;
+  }
+
+  .alert-lg .alert-icon {
+    @apply w-6 h-6 top-5 left-5;
+  }
+
+  .alert-lg.alert-with-icon {
+    @apply pl-14;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  @layer components {
+    .alert-info {
+      @apply bg-blue-900 bg-opacity-50 border-blue-700 text-blue-200;
+    }
+
+    .alert-success {
+      @apply bg-green-900 bg-opacity-50 border-green-700 text-green-200;
+    }
+
+    .alert-warning {
+      @apply bg-yellow-900 bg-opacity-50 border-yellow-700 text-yellow-200;
+    }
+
+    .alert-error {
+      @apply bg-red-900 bg-opacity-50 border-red-700 text-red-200;
+    }
+
+    .alert-close {
+      @apply text-current opacity-75 hover:opacity-100;
+    }
+  }
+}

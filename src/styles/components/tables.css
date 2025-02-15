@@ -1,0 +1,194 @@
+/* QCS Management System - Table Components */
+
+@layer components {
+  /* Base Table */
+  .table {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+
+  .table-container {
+    @apply overflow-x-auto shadow-sm rounded-lg border border-gray-200;
+  }
+
+  /* Table Header */
+  .table thead {
+    @apply bg-gray-50;
+  }
+
+  .table th {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  /* Table Body */
+  .table tbody {
+    @apply bg-white divide-y divide-gray-200;
+  }
+
+  .table td {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+
+  /* Table Row Interactions */
+  .table tbody tr {
+    @apply hover:bg-gray-50 transition-colors duration-150;
+  }
+
+  .table-row-selected {
+    @apply bg-primary-50;
+  }
+
+  /* Table Variants */
+  .table-compact {
+    @apply text-xs;
+  }
+
+  .table-compact th {
+    @apply px-4 py-2;
+  }
+
+  .table-compact td {
+    @apply px-4 py-2;
+  }
+
+  .table-striped tbody tr:nth-child(odd) {
+    @apply bg-gray-50;
+  }
+
+  /* Table Cell Alignments */
+  .table-cell-left {
+    @apply text-left;
+  }
+
+  .table-cell-center {
+    @apply text-center;
+  }
+
+  .table-cell-right {
+    @apply text-right;
+  }
+
+  /* Table Cell Types */
+  .table-cell-truncate {
+    @apply max-w-xs truncate;
+  }
+
+  .table-cell-wrap {
+    @apply whitespace-normal;
+  }
+
+  /* Table Footer */
+  .table tfoot {
+    @apply bg-gray-50 border-t border-gray-200;
+  }
+
+  .table tfoot td {
+    @apply px-6 py-4 whitespace-nowrap text-sm font-medium;
+  }
+
+  /* Table Pagination */
+  .table-pagination {
+    @apply px-6 py-3 flex items-center justify-between border-t border-gray-200;
+  }
+
+  .table-pagination-info {
+    @apply text-sm text-gray-700;
+  }
+
+  .table-pagination-actions {
+    @apply flex items-center space-x-2;
+  }
+
+  /* Table Loading State */
+  .table-loading {
+    @apply opacity-60;
+  }
+
+  .table-loading tbody {
+    @apply relative;
+  }
+
+  .table-loading tbody::after {
+    content: "";
+    @apply absolute inset-0 bg-gray-200 bg-opacity-50;
+  }
+
+  /* Table Empty State */
+  .table-empty {
+    @apply text-center py-12;
+  }
+
+  .table-empty-text {
+    @apply text-sm text-gray-500;
+  }
+
+  /* Table Actions */
+  .table-actions {
+    @apply flex items-center space-x-2;
+  }
+
+  /* Table Sorting */
+  .table-sort-header {
+    @apply cursor-pointer hover:bg-gray-100;
+  }
+
+  .table-sort-icon {
+    @apply ml-2 inline-block;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  @layer components {
+    .table-container {
+      @apply border-gray-700;
+    }
+
+    .table thead {
+      @apply bg-gray-800;
+    }
+
+    .table th {
+      @apply text-gray-400;
+    }
+
+    .table tbody {
+      @apply bg-gray-800 divide-gray-700;
+    }
+
+    .table td {
+      @apply text-gray-300;
+    }
+
+    .table tbody tr {
+      @apply hover:bg-gray-700;
+    }
+
+    .table-row-selected {
+      @apply bg-primary-900;
+    }
+
+    .table-striped tbody tr:nth-child(odd) {
+      @apply bg-gray-750;
+    }
+
+    .table tfoot {
+      @apply bg-gray-800 border-gray-700;
+    }
+
+    .table-pagination {
+      @apply border-gray-700;
+    }
+
+    .table-pagination-info {
+      @apply text-gray-400;
+    }
+
+    .table-empty-text {
+      @apply text-gray-400;
+    }
+
+    .table-sort-header {
+      @apply hover:bg-gray-700;
+    }
+  }
+}

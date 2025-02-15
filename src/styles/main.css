@@ -1,0 +1,171 @@
+/* QCS Management System - Main Stylesheet */
+
+/* Import Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Base Styles */
+@import './base/reset.css';
+@import './base/variables.css';
+@import './base/typography.css';
+
+/* Import Component Styles */
+@import './components/buttons.css';
+@import './components/forms.css';
+@import './components/cards.css';
+@import './components/tables.css';
+@import './components/modals.css';
+@import './components/alerts.css';
+@import './components/badges.css';
+
+/* Custom Utilities */
+@layer utilities {
+  /* Layout */
+  .content-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-container {
+    @apply py-6 sm:py-8 lg:py-12;
+  }
+
+  /* Flexbox Utilities */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* Grid Utilities */
+  .grid-auto-fit {
+    @apply grid grid-cols-1;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .grid-auto-fill {
+    @apply grid grid-cols-1;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* Spacing Utilities */
+  .space-y-safe {
+    @apply space-y-4 md:space-y-6 lg:space-y-8;
+  }
+
+  .space-x-safe {
+    @apply space-x-4 md:space-x-6 lg:space-x-8;
+  }
+
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Scrollbar Utilities */
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      @apply w-2;
+    }
+    &::-webkit-scrollbar-track {
+      @apply bg-gray-100 rounded-full;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-300 rounded-full hover:bg-gray-400;
+    }
+  }
+
+  /* Animation Utilities */
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  /* Focus Utilities */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .focus-ring-inset {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset;
+  }
+}
+
+/* Dark Mode Utilities */
+@media (prefers-color-scheme: dark) {
+  @layer utilities {
+    .scrollbar-thin::-webkit-scrollbar-track {
+      @apply bg-gray-800;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      @apply bg-gray-600 hover:bg-gray-500;
+    }
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+
+  body {
+    font: 12pt Georgia, "Times New Roman", Times, serif;
+    line-height: 1.3;
+    background: #fff !important;
+    color: #000;
+  }
+
+  a {
+    page-break-inside: avoid;
+  }
+
+  h1 {
+    page-break-before: always;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  img {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  table, pre {
+    page-break-inside: avoid;
+  }
+
+  ul, ol, dl {
+    page-break-before: avoid;
+  }
+}
